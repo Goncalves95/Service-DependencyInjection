@@ -10,12 +10,12 @@ export class TasksService {
     allTasks = this.tasks.asReadonly();
 
     addTask(taskData: { title: string; description: string }) {
-        const newTask = {
+        const newTask: Task = {
             ...taskData,
             id: Math.random().toString(),
             status: 'OPEN'
         };
-        this.tasks.update((oldTasks) => [...oldTasks, ]);
+        this.tasks.update((oldTasks) => [...oldTasks, newTask]);
     }
     constructor() {}
 }
